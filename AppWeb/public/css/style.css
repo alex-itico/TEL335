@@ -33,7 +33,7 @@ a:hover {
 
 /* Cabecera y Navegación */
 header {
-  background-color: #171717;
+  background-color: #004B85;
   padding: 20px 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
@@ -48,7 +48,7 @@ h1 {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 40px;
-  color:  #004B85;
+  color:  #F7AE00;
   text-align: center;
 }
 
@@ -108,4 +108,9 @@ img {
 :focus {
   outline: 3px solid #F7AE00; /* Hacer más visible el foco para accesibilidad */
   outline-offset: 2px;
+}
+
+#imagen-izquierda {
+  float: left; /* Hace que la imagen flote a la izquierda del contenido */
+  margin-right: 20px; /* Espacio entre la imagen y el encabezado */
 }

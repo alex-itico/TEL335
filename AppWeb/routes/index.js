@@ -1,15 +1,22 @@
 'use strict'
 
 const express = require('express');
+const path = require('path'); // Importar el módulo path
 const router = express.Router();
 
 router
 .get('/', (req, res) => {
-    res.sendFile("index.html");
-}).get('/integrantes', (req, res) => {
-    res.sendFile(__dirname.replace("\\routes", "\\views") + "\\integrantes.html");
-}).get('/acerca', (req, res) => {
-    res.sendFile(__dirname.replace("\\routes", "\\views") + "\\acerca.html");
+    // Usar path.join para construir la ruta de forma segura
+    res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+})
+.get('/integrantes', (req, res) => {
+    // Usar path.join para asegurar compatibilidad entre sistemas operativos
+    res.sendFile(path.join(__dirname, '..', 'views', 'integrantes.html'));
+})
+.get('/acerca', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'acerca.html'));
 })
 
 module.exports = router;
+

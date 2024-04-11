@@ -10,5 +10,5 @@ app.use(routes)
 
 
 app.listen(3000, ()=>{
-    console.log('Aplicación para la base del proyecto.')
+    console.log('Corriendo Aplicación para la base del proyecto.')
 })

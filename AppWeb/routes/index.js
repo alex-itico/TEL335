@@ -18,5 +18,10 @@ router
     res.sendFile(path.join(__dirname, '..', 'views', 'acerca.html'));
 })
 
+.get('/login', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'login.html'));
+})
+
 module.exports = router;
 

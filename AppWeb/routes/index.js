@@ -33,5 +33,15 @@ router
     res.sendFile(path.join(__dirname, '..', 'views', 'reserva.html'));
 })
 
+.get('/recuperar', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'recuperar.html'));
+})
+
+.get('/nueva', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'nueva.html'));
+})
+
 module.exports = router;
 

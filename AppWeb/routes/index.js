@@ -28,5 +28,10 @@ router
     res.sendFile(path.join(__dirname, '..', 'views', 'register.html'));
 })
 
+.get('/reserva', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'reserva.html'));
+})
+
 module.exports = router;
 

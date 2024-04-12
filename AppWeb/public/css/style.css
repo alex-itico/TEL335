@@ -33,7 +33,7 @@ a:hover {
 
 /* Cabecera y Navegación */
 header {
-  background-color: #004B85;
+  background-color: #171717;
   padding: 20px 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
@@ -49,7 +49,7 @@ h1 {
   font-weight: bold;
   font-size: 40px;
   color:  #F7AE00;
-  text-align:center;
+  text-align: center;
 }
 
 h2 {
@@ -110,16 +110,7 @@ img {
   outline-offset: 2px;
 }
 
-
-#logo-USM{
-  width: 100px;
-  height: 80px;
-  margin-left: 20px; /* Alinea el logo a la izquierda */
-  margin-right: 470px;
-  float: left;
-}
-
-.container-md {
-  display: flex;
-  align-items: center; /* Centra verticalmente los elementos */
+#imagen-izquierda {
+  float: left; /* Hace que la imagen flote a la izquierda del contenido */
+  margin-right: 20px; /* Espacio entre la imagen y el encabezado */
 }

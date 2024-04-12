@@ -1,4 +1,4 @@
-/* Estilos Base */
+  /* Estilos Base */
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +14,25 @@
     font-family: Arial, sans-serif;
     font-size: 20px;
     line-height: 1.5;
-    background: linear-gradient(130deg,#F7AE00,#004B85,#204195,#4037A4);
-    color: #000000;
+    background: linear-gradient(45deg,#F7AE00,#4037A4,#004B85,#D60019);
+    background-size: 300% 300%;
     display: flex;
     flex-direction: column;
+    animation: color 12s ease-in-out infinite;
+  }
+
+  @keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    
+    50%{
+        background-position: 100% 50%;
+    }
+    
+    100%{
+        background-position: 0 50%;
+    }
   }
   
   a {
@@ -33,8 +48,11 @@
   
   /* Cabecera y Navegación */
   header {
+    display: flex;
+    justify-content: center;
     background: rgba(255, 255, 255, 0);
     padding: 20px 0;
+    align-items: center;
   }
   
   nav {

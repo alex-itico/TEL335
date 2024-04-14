@@ -43,5 +43,10 @@ router
     res.sendFile(path.join(__dirname, '..', 'views', 'nueva.html'));
 })
 
+.get('/inicio', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'index_2.html'));
+})
+
 module.exports = router;
 

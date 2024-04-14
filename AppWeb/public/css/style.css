@@ -60,7 +60,7 @@ h2 {
 }
 
 /* Secciones y Contenido */
-.container {
+.container {  
   max-width: 1000px;
   margin: 20px auto;
   padding: 40px;

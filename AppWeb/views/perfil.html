@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Inicio</title>
+  <link rel="stylesheet" href="../css/perfil.css"> <!-- Asegúrate de enlazar correctamente tu archivo CSS -->
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/../images/Logo_UTFSM.png" alt="Logotipo"> <!-- Asegúrate de tener un logotipo -->
+    </div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="/reserva">Reservar</a>
+      <a href="/ver_mis_reservas">Gestionar Reservas</a>
+      <a href="/editar_perfil">Gestionar Usuario</a>
+    </nav>
+    <div class="notificaciones">
+      <button onclick="mostrarNotificaciones()">Notificaciones</button>
+      <div id="panel-notificaciones" class="panel-oculto">
+        <!-- Aquí se podrían cargar las notificaciones -->
+        <p>No hay nuevas notificaciones.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1>Bienvenido/a [Nombre del Usuario]</h1>
+    <p>Selecciona una opción para comenzar.</p>
+  </main>
+</body>
+</html>

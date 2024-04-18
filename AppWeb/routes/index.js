@@ -33,4 +33,41 @@ router
     res.sendFile(path.join(__dirname, '..', 'views', 'reserva.html'));
 })
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+.get('/recuperar', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'recuperar.html'));
+})
+
+.get('/nueva', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'nueva.html'));
+})
+
+.get('/faq', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'faq.html'));
+})
+
+.get('/perfil', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'perfil.html'));
+})
+
+.get('/editar_perfil', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'editar_perfil.html'));
+})
+
+.get('/ver_mis_reservas', (req, res) => {
+    // Igual que arriba, usando path.join
+    res.sendFile(path.join(__dirname, '..', 'views', 'verMisReserva.html'));
+})
+
+
+
+module.exports = router;
+
+>>>>>>> origin/main

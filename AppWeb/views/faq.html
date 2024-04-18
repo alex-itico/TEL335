@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Inicio</title>
+  <link rel="stylesheet" href="../css/perfil.css"> <!-- Asegúrate de enlazar correctamente tu archivo CSS -->
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/../images/Logo_UTFSM.png" alt="Logotipo"> <!-- Asegúrate de tener un logotipo -->
+    </div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="/reserva">Reservar</a>
+      <a href="/ver_mis_reservas">Gestionar Reservas</a>
+      <a href="/editar_perfil">Gestionar Usuario</a>
+      <a href="/faq">Seccion FAQ</a>
+    </nav>
+    <div class="notificaciones">
+      <button onclick="mostrarNotificaciones()">Notificaciones</button>
+      <div id="panel-notificaciones" class="panel-oculto">
+        <!-- Aquí se podrían cargar las notificaciones -->
+        <p>No hay nuevas notificaciones.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="faq">
+        <h2>Preguntas Frecuentes (FAQ)</h2>
+        <div class="faq-item">
+            <h3>¿Cómo puedo hacer una reserva?</h3>
+            <p>Puede hacer una reserva a través de la página de reserva, siguiendo las instrucciones para seleccionar el servicio que desea reservar.</p>
+        </div>
+        <div class="faq-item">
+            <h3>¿Cómo puedo gestionar mis reservas?</h3>
+            <p>Puede gestionar sus reservas accediendo a la página "Gestionar Reservas", donde podrá modificar o cancelar sus reservas.</p>
+        </div>
+        <div class="faq-item">
+            <h3>¿Cómo puedo editar mi perfil?</h3>
+            <p>Puede editar su perfil desde la página "Gestionar Usuario".</p>
+        </div>
+
+    </section>
+  </main>
+</body>
+</html>

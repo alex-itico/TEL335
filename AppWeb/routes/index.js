@@ -33,9 +33,6 @@ router
     res.sendFile(path.join(__dirname, '..', 'views', 'reserva.html'));
 })
 
-<<<<<<< HEAD
-module.exports = router;
-=======
 .get('/recuperar', (req, res) => {
     // Igual que arriba, usando path.join
     res.sendFile(path.join(__dirname, '..', 'views', 'recuperar.html'));
@@ -70,4 +67,3 @@ module.exports = router;
 
 module.exports = router;
 
->>>>>>> origin/main

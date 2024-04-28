@@ -3,10 +3,9 @@ const mongoose = require('mongoose');
 const connectToDatabase = () => {
     console.log('Intentando conectar a MongoDB...');
 
-    mongoose.connect('mongodb://db:27017/canchas', {
+    mongoose.connect('mongodb://mongo:27017/databaseCanchas', {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
+        useUnifiedTopology: true
     }).then(() => {
         console.log('Conexión a MongoDB establecida');
     }).catch(err => {
@@ -15,3 +14,4 @@ const connectToDatabase = () => {
 };
 
 module.exports = connectToDatabase;
+

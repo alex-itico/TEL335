@@ -17,3 +17,4 @@ EXPOSE 3000
 
 # Comando para ejecutar la aplicación
 CMD ["node", "src/app.js"]
+

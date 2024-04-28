@@ -1,25 +1,13 @@
 version: '3.8'
 services:
-  app:
+  web:
+    container_name: Appweb
+    restart: always
     build: .
     ports:
       - "3000:3000"
-    volumes:
-      - ./src:/usr/src/app
-      - /usr/src/app/node_modules
-    depends_on:
-      - db
-    environment:
-      - NODE_ENV=development
-      - DB_URI=mongodb://db:27017/canchas
-
-  db:
-    image: mongo:latest
-    volumes:
-      - mongodb_data:/data/db
+  mongo:
+    container_name: databaseCanchas
+    image: mongo
     ports:
       - "27017:27017"
-
-volumes:
-  mongodb_data:
-

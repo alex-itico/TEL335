@@ -4,8 +4,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-
-
 // Llama a la función de conexión a la base de datos
 connectToDatabase();
 
@@ -30,12 +28,6 @@ app.use(authRoutes);
 app.use((req, res, next) => {
     res.status(404).send('Lo sentimos, no pudimos encontrar eso!');
 });
-
-// Iniciar el servidor y confirmar el puerto en uso
-app.listen(PORT, () => {
-    console.log(`Corriendo aplicación en el puerto ${PORT}`);
-});
-
 
 // Iniciar el servidor y confirmar el puerto en uso
 app.listen(PORT, () => {

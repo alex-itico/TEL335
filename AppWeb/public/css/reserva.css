@@ -76,6 +76,21 @@
     color:  #F7AE00;
   }
 
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    color:  #F7AE00;
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    color:  #FFF;
+  }
+
+
   label {
     color: #F7AE00; /* Cambia el color de la fuente a rojo */
   }
@@ -144,4 +159,13 @@
     justify-content: center;
     text-align: center;
     align-items: center; /* Centra verticalmente los elementos */
+  }
+
+  #notificaciones{
+    color: #F7AE00; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    font-size: 20px;
   }

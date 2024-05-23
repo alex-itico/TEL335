@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Inicio</title>
-  <link rel="stylesheet" href="../css/perfil.css"> <!-- Asegúrate de enlazar correctamente tu archivo CSS -->
+  <link rel="stylesheet" href="../css/reserva.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="/../images/Logo_UTFSM.png" alt="Logotipo"> <!-- Asegúrate de tener un logotipo -->
+      <img src="/../images/Logo_UTFSM.png" alt="logo" id="logo-USM" width="50%" height="50%"> <!-- Asegúrate de tener un logotipo -->
     </div>
     <nav>
       <a href="#">Inicio</a>
@@ -17,14 +18,14 @@
       <a href="/ver_mis_reservas">Gestionar Reservas</a>
       <a href="/editar_perfil">Gestionar Usuario</a>
       <a href="/faq">Seccion FAQ</a>
-    </nav>
-    <div class="notificaciones">
-      <button onclick="mostrarNotificaciones()">Notificaciones</button>
-      <div id="panel-notificaciones" class="panel-oculto">
-        <!-- Aquí se podrían cargar las notificaciones -->
-        <p>No hay nuevas notificaciones.</p>
-      </div>
+      <div class="notificaciones">
+        <button onclick="mostrarNotificaciones()" id="notificaciones">Notificaciones</button>
+        <div id="panel-notificaciones" class="panel-oculto">
+        <!-- Aquí se podrían cargar las notificaciones <p>No hay nuevas notificaciones.</p> -->
+        </div>
     </div>
+    </nav>
+
   </header>
 
   <main>

@@ -30,7 +30,7 @@ router
 
 .get('/reserva', (req, res) => {
     // Igual que arriba, usando path.join
-    res.sendFile(path.join(__dirname, '..', 'views', 'reserva.html'));
+    res.sendFile(path.join(__dirname, '..', 'views', 'user/reserva.html'));
 })
 
 .get('/recuperar', (req, res) => {
@@ -45,22 +45,22 @@ router
 
 .get('/faq', (req, res) => {
     // Igual que arriba, usando path.join
-    res.sendFile(path.join(__dirname, '..', 'views', 'faq.html'));
+    res.sendFile(path.join(__dirname, '..', 'views', 'user/faq.html'));
 })
 
 .get('/perfil', (req, res) => {
     // Igual que arriba, usando path.join
-    res.sendFile(path.join(__dirname, '..', 'views', 'perfil.html'));
+    res.sendFile(path.join(__dirname, '..', 'views', 'user/perfil.html'));
 })
 
 .get('/editar_perfil', (req, res) => {
     // Igual que arriba, usando path.join
-    res.sendFile(path.join(__dirname, '..', 'views', 'editar_perfil.html'));
+    res.sendFile(path.join(__dirname, '..', 'views', 'user/editar_perfil.html'));
 })
 
 .get('/ver_mis_reservas', (req, res) => {
     // Igual que arriba, usando path.join
-    res.sendFile(path.join(__dirname, '..', 'views', 'verMisReserva.html'));
+    res.sendFile(path.join(__dirname, '..', 'views', 'user/verMisReserva.html'));
 })
 
 

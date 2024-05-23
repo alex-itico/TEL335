@@ -58,9 +58,13 @@
   nav {
     display: flex;
     justify-content: center; 
+    align-items: center;
     gap: 20px; 
   }
+
+
   
+
   h1 {
     font-family: "Roboto", sans-serif;
     font-weight: bold;

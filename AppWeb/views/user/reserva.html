@@ -8,16 +8,17 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <header>
-    <div class="container-md">
-      <img src="/../images/Logo_UTFSM.png" alt="logo" id="logo-USM" width="50%" height="50%">
-      <h1>Reserva de Canchas</h1>
-    </div>
-    <nav>
-      <a class='bx bxs-home' href="/perfil">Inicio </a>
-      <a class='bx bxs-calendar'href="/reserva">Reserva de Cancha</a>
-    </nav>
-  </header>
+  <div id="header-placeholder"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("index.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    });
+  </script>
+
   
   <main>
     <div class="container">

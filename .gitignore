@@ -1,1 +1,3 @@
 node_modules/
+AppWeb/node_modules/
+AppWeb/.env

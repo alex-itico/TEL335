@@ -1,5 +1,5 @@
 'use strict'
-
+const user_ctrl = require('../controllers/users.js')
 const express = require('express');
 const path = require('path'); // Importar el módulo path
 const router = express.Router();
@@ -63,6 +63,8 @@ router
     res.sendFile(path.join(__dirname, '..', 'views', 'user/verMisReserva.html'));
 })
 
+.post('/register',user_ctrl.register)
+.post('/login',user_ctrl.login)
 
 
 module.exports = router;

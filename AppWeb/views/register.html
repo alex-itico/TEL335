@@ -13,35 +13,35 @@
         <img src="/../images/bluelock.png" alt="logo" id="logo-USM">
     </div>
     <div class="wrapper">
-        <form action="">
+        <form id="register_user">
             <h1>Registrarse</h1>
 
             <div class="input-box">
-                <input type="text" placeholder="Nombre y Apellidos" required>
+                <input name="name" type="text" placeholder="Nombre y Apellidos" required>
                 <i class='bx bxs-user-circle' ></i>
             </div>
 
             <div class="input-box">
-                <input type="text" placeholder="Correo Institucional" required>
+                <input name="email" type="text" placeholder="Correo Institucional" required>
                 <i class='bx bxs-envelope' ></i>
             </div>
 
             <div class="input-radio-box">
                 <div class="radio">
-                    <input type="radio" name="type_class" id="student" value="h" required/><label for="student">Estudiante</label>
+                    <input type="radio" name="type_class" id="student" value="student" required/><label for="student">Estudiante</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" name="type_class" id="admin" value="m" required/> <label for="admin">Administrador</label>
+                    <input type="radio" name="type_class" id="admin" value="admin" required/> <label for="admin">Administrador</label>
                 </div>
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="Escriba Contraseña" required>
+                <input name="password" type="password" placeholder="Escriba Contraseña" required>
                 <i class='bx bxs-lock' ></i>
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder=" Repetir Contraseña" required>
+                <input name="password_rep" type="password" placeholder=" Repetir Contraseña" required>
                 <i class='bx bxs-lock' ></i>
             </div>
 
@@ -53,6 +53,31 @@
         </form>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const $ = (select) => document.querySelector(select);
+
+            $("#register_user").addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                const form = new FormData(this);
+                
+                // Convertir los datos del formulario a un objeto para visualización
+                const formDataObj = {};
+                form.forEach((value, key) => {
+                    formDataObj[key] = value;
+                });
+                fetch('/register',{
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(formDataObj)
+                })
+                .then(response => response.json())
+            });
+        });
+    </script>
 
     
 

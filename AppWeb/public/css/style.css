@@ -73,6 +73,10 @@ nav .ventana-user {
   margin-right: 5%;
 }
 
+.ventana-user{
+  cursor: pointer;
+}
+
 .sub-menu-wrap{
   position: absolute;
   right: 2%;

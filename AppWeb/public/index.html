@@ -22,9 +22,8 @@
       
       </div> 
       
-      <div class="ventana-user" id="clickable-image">
+      <div class="ventana-user" onclick="toggleMenu()">
         <img src="/images/usericon.png" class="user-icon">
-        <p id="text">Prueba de color blanco</p>
       </div>
 
       <div class="sub-menu-wrap" id="subMenu">
@@ -59,6 +58,13 @@
     </nav>
 
   </header>
+
+  <script>
+    function toggleMenu() {
+      var subMenu = document.getElementById('subMenu');
+      subMenu.classList.toggle('open-menu');
+    }
+  </script>
 
 </body>
 </html>

@@ -15,7 +15,6 @@
     <h1 id="welcome-message">Bienvenido/a [Nombre del Usuario]</h1>
     <p>Selecciona una opción para comenzar.</p>
   </main>
-  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Obtener el nombre del usuario desde localStorage
@@ -26,7 +25,9 @@
         document.getElementById('welcome-message').textContent = `Bienvenido/a ${userName}`;
       } else {
         // Si no hay nombre de usuario en localStorage, redirigir a la página de login
-        window.location.href = '/login.html';
+        alert("Ingrese Credenciales")
+        window.location.href = '/login';
+
       }
     });
   </script>

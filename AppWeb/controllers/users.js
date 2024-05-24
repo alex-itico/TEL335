@@ -18,6 +18,7 @@ const register = async (req,res)=>{
       newUser.save();
     
     return res.status(201).json(newUser);
+    
 }
     
 

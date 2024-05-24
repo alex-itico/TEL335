@@ -8,17 +8,63 @@
 </head>
 <body>
   <header>
-    <nav>    
-      <div class="logo">
-        <img src="/../images/Logo_UTFSM.png" alt="logo" id="logo-USM" width="50%" height="50%">
+    <nav>
+      <div class="nav-links">
+
+        <div class="logo">
+          <img src="/../images/Logo_UTFSM.png" alt="logo" id="logo-USM" width="50%" height="50%">
+        </div >
+        <a href="/perfil">Inicio</a>
+        <a href="/reserva">Reservar</a>
+        <a href="/ver_mis_reservas">Gestionar Reservas</a>
+        <a href="/faq">FAQ</a>
+        </div>
+      
+      </div> 
+      
+      <div class="ventana-user" onclick="toggleMenu()">
+        <img src="/images/usericon.png" class="user-icon" onclick="toggleMenu()">
       </div>
-      <a href="#">Inicio</a>
-      <a href="/reserva">Reservar</a>
-      <a href="/ver_mis_reservas">Gestionar Reservas</a>
-      <a href="/faq">Seccion FAQ</a>
-    </div>
+
+      <div class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+          <div class="user-info">
+            <img src="/images/usericon.png" class="user-icon">
+            <h2> UserName</h2>
+          </div>
+          <hr>
+
+          <a href="/editar_perfil" class="sub-menu-link">
+            <img src="/images/editar_perfil.png">
+            <p> Editar perfil</p>
+            <span>></span>
+          </a>
+
+          <a href="nueva" class="sub-menu-link">
+            <img src="/images/cambiar_pass.png">
+            <p> Cambiar Contraseña</p>
+            <span>></span>
+          </a>
+
+          <a href="#" class="sub-menu-link">
+            <img src="/images/exit.png">
+            <p> Cerrar Sesión</p>
+            <span>></span>
+          </a>
+
+        </div>
+      </div>
+
     </nav>
 
   </header>
+
+  <script>
+    function toggleMenu() {
+      var subMenu = document.getElementById('subMenu');
+      subMenu.classList.toggle('open-menu');
+    }
+  </script>
+
 </body>
 </html>

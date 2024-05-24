@@ -41,7 +41,7 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
+.nav-links a:hover {
   color: #FFF; /* Añadir un poco de interactividad */
   text-decoration: underline;
 }
@@ -55,15 +55,103 @@ header {
   align-items: center;
 }
 
-nav {
+nav { 
   display: flex;
-  justify-content: center; 
+  align-items: center;
+}
+
+nav .nav-links {
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 20px; 
+  margin-left: auto;
+}
+
+nav .ventana-user {
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.sub-menu-wrap{
+  position: absolute;
+  right: 2%;
+  top: 10%;
+  width: 320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu{
+  max-height: 400px;
+}
+
+.sub-menu{
+  border-radius: 20px;
+background: #FFF;
+padding: 20px
+}
+
+.user-info{
+  display: flex;
+  align-items: center;
+}
+
+.user-info h2{
+  font-weight: 500;
+}
+
+.user-info img{
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.sub-menu hr{
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.sub-menu-link{
+  display: flex;
+  align-items: center;
+  color: #F7AE00;
+  margin: 12px 0;
+  gap: 3%;
+}
+
+.sub-menu-link p{
+  width: 100%;
+  color: #F7AE00;
 }
 
 
+.sub-menu-link img{
+  width:40px;
+  border: 2px solid #F7AE00;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
 
+.sub-menu-link span{
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span{
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover p{
+  font-weight: 600;
+  color: #F7AE00;
+  text-decoration: underline;
+}
 
 h1 {
   font-family: "Roboto", sans-serif;
@@ -87,42 +175,20 @@ h3 {
   color:  #F7AE00;
 }
 
+
 p {
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
   font-size: 19px;
   color:  #FFF;
 }
 
 
-label {
-  color: #F7AE00; /* Cambia el color de la fuente a rojo */
-}
-
-/* Secciones y Contenido */
-.container {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 15px;
-  border: 1px solid #F7AE00; 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease; 
-}
-
-
-section {
-  margin-bottom: 40px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0); 
-  border-radius: 8px; 
-}
-
 img {
   max-width: 100%;
   height: auto;
 }
+
+
 
 /* Responsividad */
 @media (max-width: 768px) {
@@ -142,25 +208,10 @@ img {
 }
 
 
-/* Ajustes adicionales para mejorar la accesibilidad y estética */
-:focus {
-  outline: 3px solid #F7AE00; /* Hacer más visible el foco para accesibilidad */
-  outline-offset: 2px;
-}
-
-
 #logo-USM{
   width: 100px;
   height: 80px;
   margin-left: 20px; /* Alinea el logo a la izquierda */
   margin-right: 50px;
   float: left;
-}
-
-.container-md {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center; /* Centra verticalmente los elementos */
 }

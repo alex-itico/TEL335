@@ -165,7 +165,8 @@ h1 {
   text-align:center;
 }
 
-h2 {
+#calendar-text {
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 26px;
@@ -218,4 +219,70 @@ img {
   margin-left: 20px; /* Alinea el logo a la izquierda */
   margin-right: 50px;
   float: left;
+}
+
+.calendar {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #F7AE00;
+  border-radius: 10px;
+  background-color: None;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.week {
+display: flex;
+justify-content: space-between;
+}
+
+.time-slots {
+list-style-type: none;
+border: 2px solid #F7AE00;
+padding: 0;
+margin: 0;
+width: 10%;
+}
+
+.time-slots li {
+height: 40px;
+line-height: 40px;
+text-align: center;
+border-bottom: 1px solid #F7AE00;
+
+}
+
+.days {
+display: flex;
+border: 2px solid #F7AE00;
+width: 90%;
+}
+
+.day {
+flex: 1;
+border-left: 1px solid #F7AE00;
+border-bottom: 1px solid #F7AE00;
+padding: 5px;
+box-sizing: border-box;
+text-align: center;
+height: 40px;
+line-height: 40px;
+position: relative;
+}
+
+.day:first-child {
+border-left: none;
+}
+
+.block {
+  width: 100%;
+  height: 33px;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparencia */
+  margin-bottom: 7px;
+  border-radius: 10px;
 }

@@ -54,14 +54,6 @@
     border-bottom: 2px solid #F7AE00;
     align-items: center;
   }
-  
-  nav {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    gap: 20px; 
-  }
-
 
   
 

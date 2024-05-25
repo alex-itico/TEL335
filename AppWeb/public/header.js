@@ -29,4 +29,7 @@ function toggleMenu() {
     }
   }
   
-
+  function toggleAlert(){
+    var subMenu = document.getElementById('alertMenu');
+    subMenu.classList.toggle('open-alert');
+  }

@@ -68,6 +68,57 @@ nav .nav-links {
   margin-left: auto;
 }
 
+nav .alerts{
+  position: absolute;
+  margin-left: 84%;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.alerts:hover #notifications{
+  transform: scale(1.1);
+}
+
+#calendar-text{
+  text-align: center;
+}
+
+.menuAlerts{
+  position: absolute;
+  right: 13%;
+  top: 10%;
+  width:320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.menuAlerts.open-alert {
+  max-height: 100%;
+}
+
+.subMenuAlert{
+  background: #FFF;
+  border-radius: 20px;
+  padding: 20px
+}
+
+.subMenuAlert h3{
+  color: #F7AE00;
+  font-weight: bold;
+  padding-left: 70px;
+}
+
+.alertContent {
+  margin-top: 10px;
+}
+
+.alertContent p{
+  font-size:small;
+  font-weight: bold;
+  color: #F7AE00;
+}
+
 nav .ventana-user {
   margin-left: auto;
   margin-right: 5%;
@@ -76,6 +127,10 @@ nav .ventana-user {
 .ventana-user{
   cursor: pointer;
 }
+
+#icon_submenu{
+  margin-bottom: 4%;
+} 
 
 .sub-menu-wrap{
   position: absolute;
@@ -93,8 +148,8 @@ nav .ventana-user {
 
 .sub-menu{
   border-radius: 20px;
-background: #FFF;
-padding: 20px
+  background: #FFF;
+  padding: 20px
 }
 
 .user-info{
@@ -126,6 +181,7 @@ padding: 20px
   color: #F7AE00;
   margin: 12px 0;
   gap: 3%;
+  cursor: pointer;
 }
 
 .sub-menu-link p{
@@ -165,8 +221,7 @@ h1 {
   text-align:center;
 }
 
-#calendar-text {
-  text-align: center;
+h2 {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 26px;

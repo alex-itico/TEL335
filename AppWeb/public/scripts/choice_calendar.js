@@ -101,8 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
 $form.addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData($form);

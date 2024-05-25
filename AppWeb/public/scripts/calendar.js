@@ -4,6 +4,13 @@ const $$ = (select) => document.querySelectorAll(select);
 let cancha = 0;
 const $form = $('#form');
 const $cols = $('#cols');
+
+const canchas = [
+    { value: 'cancha1', label: 'Cancha 1' },
+    { value: 'cancha2', label: 'Cancha 2' },
+    { value: 'canchaTenis', label: 'Cancha de Tenis' },
+    { value: 'canchaMultiuso', label: 'Cancha multiuso' }
+];
 const DAYS = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
 const HOURS = ['1-2', '3-4', '5-6', '7-8', '9-10','11-12','13-14','15-16'];
 const HOURS_ID = ['12','34','56','78','910','1112','1314','1516'];
@@ -81,9 +88,20 @@ function getDaysFromDatabase() {
   });
 }
 
+function loadCanchas() {
+    const selectCanchas = document.getElementById('select-canchas');
+    canchas.forEach(cancha => {
+        const option = document.createElement('option');
+        option.value = cancha.value;
+        option.textContent = cancha.label;
+        selectCanchas.appendChild(option);
+    });
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     fnRenderScheduler();
-    
+    loadCanchas();
 });
 
 $form.addEventListener('submit', function (e) {

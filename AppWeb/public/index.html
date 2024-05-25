@@ -32,7 +32,7 @@
         <div class="sub-menu">
           <div class="user-info">
             <img src="/images/usericon.png" class="user-icon">
-            <h2 id="userName">[UserName]</h2>
+            <h2 id="userName"></h2>
           </div>
           <hr>
 
@@ -61,18 +61,6 @@
 
   </header>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const userName = localStorage.getItem('name');
-
-      if (userName){
-        document.getElementById('userName').textContent = `${userName}`;
-        }
-        else {
-        window.location.href = '/login';
-      }
-    });
-  </script>
 
 </body>
 </html>

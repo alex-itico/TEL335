@@ -4,7 +4,7 @@ const routes = require('./routes/index.js')
 const path = require ('path')
 const cors = require('cors')
 require('./db.js')
-
+require('./libs/setup.js')
 
 app.set('port', 3000);
 

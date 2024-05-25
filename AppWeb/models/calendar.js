@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const scheduleSchema = new Schema({
+const calendarSchema = new Schema({
     id_schedule: {  //i.e 1231;12
         type: String,
         required: true
@@ -29,4 +29,4 @@ const scheduleSchema = new Schema({
     versionKey: false
 });
 
-module.exports = mongoose.model('Schedule', scheduleSchema);
+module.exports = mongoose.model('Calendar', calendarSchema);

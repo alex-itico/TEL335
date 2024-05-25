@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserva de Canchas de Fútbol</title>
   <link rel="stylesheet" href="../css/reserva.css">
+  <link rel="stylesheet" href="../css/calendar.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="header.js" defer></script>
 </head>
@@ -25,24 +26,22 @@
     
         <section id="calendario">
           <h2>Paso 2: Selecciona Fecha y Hora</h2>
-          <input type="date" id="fecha">
-          <input type="time" id="hora">
+          <form id="form" class="hour__form" aria-readonly="true" readonly>
+            <div id="cols" class="hour__cols" aria-readonly="true" readonly></div>
+          </form> 
         </section>
     
         <section id="informacion">
           <h2>Información de Contacto</h2>
           <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" required>
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
             <button type="submit">Confirmar Reserva</button>
           </form>
         </section>
     </div>
     
   </main>
+  <script type="module" src="scripts/choice_calendar.js"></script>
 </body>
 </html>

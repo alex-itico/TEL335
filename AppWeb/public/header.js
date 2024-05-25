@@ -12,6 +12,11 @@ function toggleMenu() {
   subMenu.classList.toggle('open-menu');
 }
 
+function toggleAlert(){
+  var subMenu = document.getElementById('alertMenu');
+  subMenu.classList.toggle('open-alert');
+}
+
   function logOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('name');

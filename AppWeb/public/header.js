@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
       setUserName();
-      setUserName();
     });
 });
 
@@ -26,12 +25,6 @@ function toggleAlert(){
 
   }
 
-  function setUserName() {
-    const userName = localStorage.getItem('name');
-    if (userName) {
-      document.getElementById('userName').textContent = `${userName}`;
-    } else {
-      window.location.href = '/login';
   function setUserName() {
     const userName = localStorage.getItem('name');
     if (userName) {

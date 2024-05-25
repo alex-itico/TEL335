@@ -217,7 +217,8 @@ h1 {
   text-align:center;
 }
 
-h2 {
+#calendar-text {
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 26px;

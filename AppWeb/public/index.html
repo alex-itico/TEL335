@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto TEL335 // Nombre del Grupo</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="header.js" defer></script>
 </head>
 <body>
   <header>
@@ -22,16 +23,16 @@
       
       </div> 
       
-      <div class="ventana-user" id="clickable-image">
+      <div class="ventana-user" onclick="toggleMenu()">
         <img src="/images/usericon.png" class="user-icon">
-        <p id="text">Prueba de color blanco</p>
       </div>
 
       <div class="sub-menu-wrap" id="subMenu">
+
         <div class="sub-menu">
           <div class="user-info">
             <img src="/images/usericon.png" class="user-icon">
-            <h2> UserName</h2>
+            <h2 id="userName">[UserName]</h2>
           </div>
           <hr>
 
@@ -47,9 +48,9 @@
             <span>></span>
           </a>
 
-          <a href="#" class="sub-menu-link">
+          <a class="sub-menu-link" onclick="logOut()">
             <img src="/images/exit.png">
-            <p> Cerrar Sesión</p>
+            <p id="logout-button"> Cerrar Sesión</p>
             <span>></span>
           </a>
 
@@ -59,6 +60,19 @@
     </nav>
 
   </header>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const userName = localStorage.getItem('name');
+
+      if (userName){
+        document.getElementById('userName').textContent = `${userName}`;
+        }
+        else {
+        window.location.href = '/login';
+      }
+    });
+  </script>
 
 </body>
 </html>

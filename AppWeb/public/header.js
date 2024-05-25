@@ -6,3 +6,25 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("header-placeholder").innerHTML = data;
     });
 });
+
+function toggleMenu() {
+  var subMenu = document.getElementById('subMenu');
+  subMenu.classList.toggle('open-menu');
+}
+
+  function logOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    window.location.href = '/login';
+
+  }
+
+document.addEventListener('DOMContentLoaded', function(){
+  const userName = localStorage.getItem('name');
+  if (userName){
+    document.getElementById('userName').textContent = `${userName}`;
+    }
+    else {
+    window.location.href = '/login';
+  }
+});

@@ -74,11 +74,33 @@ button {
 }
 
 button:hover {
-    background-color: #e0a806;
+    background-color: #ffba08;
 }
 
 .selected .hour__label-content {
-    background-color: rgba(255, 255, 255, 0.5); 
-    color: #3b2d7e; 
+    background-color: rgba(211, 23, 23, 0.5); 
+    color: black; 
     font-weight: bold; 
+}
+
+option {
+    color: black;
+    font-weight: bold;
+}
+select{
+    color: black;
+    font-weight: bold;
+    background: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input {
+    color: black;
+    font-weight: bold;
+    background: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }

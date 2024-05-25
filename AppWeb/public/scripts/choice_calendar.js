@@ -4,6 +4,13 @@ const $$ = (select) => document.querySelectorAll(select);
 let cancha = 0;
 const $form = $('#form');
 const $cols = $('#cols');
+const $container = $('#container');
+const canchas = [
+    { value: 'cancha1', label: 'Cancha 1' },
+    { value: 'cancha2', label: 'Cancha 2' },
+    { value: 'canchaTenis', label: 'Cancha de Tenis' },
+    { value: 'canchaMultiuso', label: 'Cancha multiuso' }
+];
 const DAYS = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
 const HOURS = ['1-2', '3-4', '5-6', '7-8', '9-10','11-12','13-14','15-16'];
 const HOURS_ID = ['12','34','56','78','910','1112','1314','1516'];
@@ -29,7 +36,6 @@ const weekDates = getWeekDates();
 
 function fnRenderScheduler() {
     DAYS.forEach((day, indexDay) => {
-        console.log(day);
         const col = document.createElement('div');
         const title = document.createElement('h5');
         title.className = 'hour__title';
@@ -43,7 +49,6 @@ function fnRenderScheduler() {
             radioBtn.id = `${weekDates[indexDay]};${HOURS_ID[indexHour]}`;
             radioBtn.value = `${weekDates[indexDay]};${HOURS_ID[indexHour]}`;
             radioBtn.style.display = "none";
-            console.log(radioBtn.id);
             const radioBtnLabel = document.createElement("label");
             radioBtnLabel.className = 'hour__label';
             const radioBtnContent = document.createElement("span");
@@ -71,7 +76,7 @@ function fnRenderScheduler() {
 
 function getDaysFromDatabase() {
   // cuando se haga el fetch, se va a enviar el id de la cancha que quiero
-  ['20240520;12', '20240520;34', '20240524;34', '20240522;1112'].forEach((day) => {
+  [].forEach((day) => {
       const checkbox = document.getElementById(day);
       if (checkbox) {
           checkbox.checked = true;
@@ -80,10 +85,23 @@ function getDaysFromDatabase() {
   });
 }
 
+function loadCanchas() {
+    const selectCanchas = document.getElementById('select-canchas');
+    canchas.forEach(cancha => {
+        const option = document.createElement('option');
+        option.value = cancha.value;
+        option.textContent = cancha.label;
+        selectCanchas.appendChild(option);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     fnRenderScheduler();
-    
+    loadCanchas();
 });
+
+
+
 
 $form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -92,3 +110,5 @@ $form.addEventListener('submit', function (e) {
         console.log(value);
     });
 });
+
+

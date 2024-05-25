@@ -1,6 +1,6 @@
 'use strict'
+//const calendar_ctrl = require('../controllers/users.js')
 const user_ctrl = require('../controllers/users.js')
-const user_ctrl = require('../controllers/calendars.js')
 const express = require('express');
 const path = require('path'); // Importar el módulo path
 const router = express.Router();
@@ -65,8 +65,9 @@ router
 })
 
 .post('/register',user_ctrl.register)
+
 .post('/login',user_ctrl.login)
-.get('/login',user_ctrl.login)
+//.get('/login',user_ctrl.login)
 
 
 module.exports = router;

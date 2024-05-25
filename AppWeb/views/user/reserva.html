@@ -13,16 +13,11 @@
   <div id="header-placeholder"></div>
   
   <main>
-    <div class="container">
-        <section id="canchas">
-            <h2>Paso 1: Selecciona una Cancha</h2>
-            <select id="select-canchas">
-              <option value="cancha1">Cancha 1</option>
-              <option value="cancha2">Cancha 2</option>
-              <option value="canchaTenis">Cancha de Tenis</option>
-              <option value="canchaMultiuso">Cancha multiuso</option>
-            </select>
-          </section>
+    <div class="container" id="container">
+      <section id="canchas">
+        <h2>Paso 1: Selecciona una Cancha</h2>
+        <select id="select-canchas"></select> <!-- Selector sin opciones hardcodeadas -->
+      </section>
     
         <section id="calendario">
           <h2>Paso 2: Selecciona Fecha y Hora</h2>
@@ -36,9 +31,10 @@
           <form>
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" required>
-            <button type="submit">Confirmar Reserva</button>
+ 
           </form>
         </section>
+        <button type="submit">Confirmar Reserva</button>
     </div>
     
   </main>

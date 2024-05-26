@@ -5,12 +5,6 @@ let cancha = 0;
 const $form = $('#form');
 const $cols = $('#cols');
 
-const canchas = [
-    { value: 'cancha1', label: 'Cancha 1' },
-    { value: 'cancha2', label: 'Cancha 2' },
-    { value: 'canchaTenis', label: 'Cancha de Tenis' },
-    { value: 'canchaMultiuso', label: 'Cancha multiuso' }
-];
 const DAYS = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
 const HOURS = ['1-2', '3-4', '5-6', '7-8', '9-10','11-12','13-14','15-16'];
 const HOURS_ID = ['12','34','56','78','910','1112','1314','1516'];
@@ -35,69 +29,114 @@ function getWeekDates() {
 const weekDates = getWeekDates();
 
 function fnRenderScheduler() {
-    DAYS.forEach((day, indexDay) => {
-        console.log(day);
-        const col = document.createElement('div');
-        const title = document.createElement('h5');
-        title.className = 'hour__title';
-        title.innerText = day;
-        col.className = "hour__col";
-        col.appendChild(title);
-        HOURS.forEach((hour,indexHour) => {
-            const radioBtn = document.createElement("input");
-            radioBtn.type = "checkbox";
-            radioBtn.disabled = true;
-            radioBtn.name = `${day};${hour}`;
-            radioBtn.id = `${weekDates[indexDay]};${HOURS_ID[indexHour]}`;
-            radioBtn.value = `${weekDates[indexDay]};${HOURS_ID[indexHour]}`;
-            radioBtn.style.display = "none";
-            console.log(radioBtn.id);
-            const radioBtnLabel = document.createElement("label");
-            radioBtnLabel.className = 'hour__label';
-            const radioBtnContent = document.createElement("span");
-            radioBtnContent.className = 'hour__label-content';
-            radioBtnContent.innerText = hour;
+  $cols.innerHTML = ''; // Limpiar el contenedor de horarios
 
-            radioBtnLabel.appendChild(radioBtn);
-            radioBtnLabel.appendChild(radioBtnContent);
-            col.appendChild(radioBtnLabel);
+  DAYS.forEach((day, indexDay) => {
+    const col = document.createElement('div');
+    const title = document.createElement('h5');
+    title.className = 'hour__title';
+    title.innerText = day;
+    col.className = "hour__col";
+    col.appendChild(title);
 
-            // Agrega el event listener para cambiar la clase del label
-            radioBtn.addEventListener('change', function () {
-                if (radioBtn.checked) {
-                    radioBtnLabel.classList.add('selected');
-                } else {
-                    radioBtnLabel.classList.remove('selected');
-                }
-            });
-        });
+    HOURS.forEach((hour, indexHour) => {
+      const radioBtn = document.createElement("input");
+      radioBtn.type = "checkbox";
+      radioBtn.disabled = true;
+      radioBtn.name = `${day};${hour}`;
+      radioBtn.id = `${weekDates[indexDay]};${HOURS_ID[indexHour]}`;
+      radioBtn.value = `${weekDates[indexDay]};${HOURS_ID[indexHour]}`;
+      radioBtn.style.display = "none";
 
-        $cols.appendChild(col);
+      const radioBtnLabel = document.createElement("label");
+      radioBtnLabel.className = 'hour__label';
+      const radioBtnContent = document.createElement("span");
+      radioBtnContent.className = 'hour__label-content';
+      radioBtnContent.innerText = hour;
+
+      radioBtnLabel.appendChild(radioBtn);
+      radioBtnLabel.appendChild(radioBtnContent);
+      col.appendChild(radioBtnLabel);
+
+      // Agrega el event listener para cambiar la clase del label
+      radioBtn.addEventListener('change', function () {
+        if (radioBtn.checked) {
+          radioBtnLabel.classList.add('selected');
+        } else {
+          radioBtnLabel.classList.remove('selected');
+        }
+      });
     });
-    getDaysFromDatabase();
-}
 
-function getDaysFromDatabase() {
-  // cuando se haga el fetch, se va a enviar el id de la cancha que quiero
-  ['20240520;12', '20240520;34', '20240524;34', '20240522;1112'].forEach((day) => {
-      const checkbox = document.getElementById(day);
-      if (checkbox) {
-          checkbox.checked = true;
-          checkbox.dispatchEvent(new Event('change'));
-      }
+    $cols.appendChild(col);
   });
 }
 
-function loadCanchas() {
-    const selectCanchas = document.getElementById('select-canchas');
-    canchas.forEach(cancha => {
-        const option = document.createElement('option');
-        option.value = cancha.value;
-        option.textContent = cancha.label;
-        selectCanchas.appendChild(option);
+
+async function getDaysFromDatabase(canchaId) {
+  try {
+    const response = await fetch(`http://localhost:3000/reservas?canchaId=${canchaId}`);
+    if (!response.ok) {
+      throw new Error('Error al obtener las reservas');
+    }
+    const reservas = await response.json();
+
+    // Limpiar checkboxes anteriores
+    document.querySelectorAll('.hour__label input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+      checkbox.dispatchEvent(new Event('change'));
     });
+
+    reservas.forEach(reserva => {
+      const checkboxId = `${reserva.date};${reserva.hour}`;
+      const checkbox = document.getElementById(checkboxId);
+      if (checkbox) {
+        checkbox.checked = true;
+        checkbox.dispatchEvent(new Event('change'));
+      }
+    });
+  } catch (error) {
+    console.error('Error al cargar las reservas:', error);
+  }
 }
 
+  
+
+  async function loadCanchas() {
+    try {
+      const response = await fetch('http://localhost:3000/canchas'); // Cambia esta URL si es necesario
+      if (!response.ok) {
+        throw new Error('Error al obtener las canchas');
+      }
+      const canchas = await response.json();
+      const selectCanchas = document.getElementById('select-canchas');
+  
+      // Limpiar el select
+      selectCanchas.innerHTML = '';
+  
+      canchas.forEach(cancha => {
+        const option = document.createElement('option');
+        option.value = cancha._id;
+        option.textContent = cancha.name;
+        selectCanchas.appendChild(option);
+      });
+  
+      // Agregar el event listener para cambiar de cancha
+      selectCanchas.addEventListener('change', function() {
+        const selectedCanchaId = selectCanchas.value;
+        getDaysFromDatabase(selectedCanchaId);
+      });
+  
+      // Cargar reservas de la cancha seleccionada por defecto (si existe)
+      if (canchas.length > 0) {
+        getDaysFromDatabase(canchas[0]._id);
+      }
+    } catch (error) {
+      console.error('Error al cargar las canchas:', error);
+    }
+  }
+  
+  
 
 document.addEventListener("DOMContentLoaded", function () {
     fnRenderScheduler();

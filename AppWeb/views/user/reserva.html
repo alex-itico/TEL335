@@ -19,24 +19,22 @@
         <select id="select-canchas"></select> <!-- Selector sin opciones hardcodeadas -->
       </section>
     
-        <section id="calendario">
-          <h2>Paso 2: Selecciona Fecha y Hora</h2>
-          <form id="form" class="hour__form" aria-readonly="true" readonly>
-            <div id="cols" class="hour__cols" aria-readonly="true" readonly></div>
-          </form> 
-        </section>
+      <section id="calendario">
+        <h2>Paso 2: Selecciona Fecha y Hora</h2>
+        <form id="form" class="hour__form">
+          <div id="cols" class="hour__cols"></div>
+        </form> 
+      </section>
     
-        <section id="informacion">
-          <h2>Información de Contacto</h2>
-          <form>
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" required>
- 
-          </form>
-        </section>
-        <button type="submit">Confirmar Reserva</button>
+      <section id="informacion">
+        <h2>Información de Contacto</h2>
+        <form id="contact-form">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" required>
+        </form>
+      </section>
+      <button id="confirmar-reserva" type="submit">Confirmar Reserva</button>
     </div>
-    
   </main>
   <script type="module" src="scripts/choice_calendar.js"></script>
 </body>

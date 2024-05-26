@@ -21,6 +21,7 @@ function toggleMenu() {
   }
 
   function setUserName() {
+    console.log(localStorage);
     const userName = localStorage.getItem('name');
     if (userName) {
       document.getElementById('userName').textContent = `${userName}`;

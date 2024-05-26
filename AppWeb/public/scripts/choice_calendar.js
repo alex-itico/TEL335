@@ -71,37 +71,10 @@ function fnRenderScheduler() {
   });
 }
 
-/*
-async function getDaysFromDatabase(canchaId) {
-  try {
-    const response = await fetch(`http://localhost:3000/reservas?canchaId=${canchaId}`);
-    if (!response.ok) {
-      throw new Error('Error al obtener las reservas');
-    }
-    const reservas = await response.json();
-
-    // Limpiar checkboxes anteriores
-    document.querySelectorAll('.hour__label input[type="checkbox"]').forEach(checkbox => {
-      checkbox.checked = false;
-      checkbox.dispatchEvent(new Event('change'));
-    });
-
-    reservas.forEach(reserva => {
-      const checkboxId = `${reserva.date};${reserva.hour}`;
-      const checkbox = document.getElementById(checkboxId);
-      if (checkbox) {
-        checkbox.checked = true;
-        checkbox.dispatchEvent(new Event('change'));
-      }
-    });
-  } catch (error) {
-    console.error('Error al cargar las reservas:', error);
-  }
-}
-*/
+// cargar canchas
 async function loadCanchas() {
   try {
-    const response = await fetch('http://localhost:3000/canchas'); // Cambia esta URL si es necesario
+    const response = await fetch('/canchas'); // Cambia esta URL si es necesario
     if (!response.ok) {
       throw new Error('Error al obtener las canchas');
     }

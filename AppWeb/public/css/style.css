@@ -50,6 +50,7 @@ a {
 header {
   justify-content: center;
   background: #004b8546;
+  height: 122px;
   padding: 20px 0;
   border-bottom: 2px solid #F7AE00;
   align-items: center;

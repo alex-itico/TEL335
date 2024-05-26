@@ -5,36 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis Reservas</title>
   <link rel="stylesheet" href="../css/reserva.css">
+
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="header.js" defer></script>
+  <script src="/scripts/ver_reservas.js" defer></script> <!-- Nuevo script -->
 </head>
 <body>
   <div id="header-placeholder"></div>
 
   <div class="container">
-    <table>
+    <table id="reservas">
       <thead>
         <tr>
           <th>Fecha</th>
-          <th>Hora</th>
+          <th>Bloque</th>
           <th>Cancha</th>
           <th>Acciones</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>2024-04-15</td>
-          <td>16:00</td>
-          <td>Cancha 1</td>
-          <td>
-            <button class="btn-action edit">Editar</button>
-            <button class="btn-action delete">Cancelar</button>
-          </td>
-        </tr>
-        <!-- Repite este bloque para cada reserva -->
+      <tbody id="reservas-body">
+        <!-- Las reservas se insertarán aquí -->
       </tbody>
     </table>
   </div>
 </body>
 </html>
-

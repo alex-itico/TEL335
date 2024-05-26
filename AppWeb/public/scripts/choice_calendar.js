@@ -71,7 +71,7 @@ function fnRenderScheduler() {
   });
 }
 
-
+/*
 async function getDaysFromDatabase(canchaId) {
   try {
     const response = await fetch(`http://localhost:3000/reservas?canchaId=${canchaId}`);
@@ -98,9 +98,7 @@ async function getDaysFromDatabase(canchaId) {
     console.error('Error al cargar las reservas:', error);
   }
 }
-
-  
-
+*/
 async function loadCanchas() {
   try {
     const response = await fetch('http://localhost:3000/canchas'); // Cambia esta URL si es necesario
@@ -123,15 +121,30 @@ async function loadCanchas() {
     // Agregar el event listener para cambiar de cancha
     selectCanchas.addEventListener('change', function() {
       const selectedCanchaId = selectCanchas.value;
-      getDaysFromDatabase(selectedCanchaId);
+      //getDaysFromDatabase(selectedCanchaId);
     });
 
     // Cargar reservas de la cancha seleccionada por defecto (si existe)
     if (canchas.length > 0) {
-      getDaysFromDatabase(canchas[0]._id);
+      //getDaysFromDatabase(canchas[0]._id);
     }
   } catch (error) {
     console.error('Error al cargar las canchas:', error);
+  }
+}
+
+// Función para obtener el ID del usuario a partir del nombre de usuario
+async function getUserIdByEmail(useremail) {
+  try {
+    const response = await fetch(`/usuarios/${useremail}`);
+    if (!response.ok) {
+      throw new Error('Error al obtener el usuario');
+    }
+    const user = await response.json();
+    return user;
+  } catch (error) {
+    console.error('Error al obtener el usuario:', error);
+    return null;
   }
 }
 
@@ -155,19 +168,27 @@ document.querySelector('button[type="submit"]').addEventListener('click', async 
 
   const [date, hour] = selectedCheckbox.value.split(';');
 
-  // Suponiendo que tienes el ID del usuario de alguna forma
-  const userId = localStorage.getItem('userId'); // Debes obtener el userId de la manera adecuada
+  // Obtener el nombre del usuario del localStorage
+  const useremail = localStorage.getItem('email');
+  //console.log(useremail);
+  // Obtener el ID del usuario usando su nombre
+  const userData = await getUserIdByEmail(useremail);
+  //console.log(userData);
+  if (!userData) {
+    alert('Error al obtener el ID del usuario');
+    return;
+  }
 
   const reservaData = {
     date: parseInt(date),
     hour: parseInt(hour),
-    user: userId,
+    user: userData,
     cancha: canchaId,
     phone: telefono
   };
 
   try {
-    const response = await fetch('http://localhost:3000/reservas', {
+    const response = await fetch('/reservas', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

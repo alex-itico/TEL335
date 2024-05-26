@@ -69,9 +69,13 @@ router
 
 .post('/login',user_ctrl.login)
 
+.get('/usuarios/:useremail',user_ctrl.getUserByEmail)
+
 .get('/canchas', cancha_ctrl.getCanchas)
 
 .post('/reservas', reserva_ctrl.createReserva)
+.get('/reservas/:id', reserva_ctrl.getReservaPerUser)
+.delete('/reservas/:id', reserva_ctrl.deleteReserva)
 .get('/reservas', reserva_ctrl.getReservas);
 
 module.exports = router;

@@ -1,165 +1,209 @@
-  /* Estilos Base */
+/* Estilos Base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  background: linear-gradient(45deg, #F7AE00, #4037A4, #004B85, #D60019);
+  background-size: 300% 300%;
+  display: flex;
+  flex-direction: column;
+  animation: color 12s ease-in-out infinite;
+}
+
+@keyframes color {
+  0% {
+      background-position: 0 50%;
   }
-  
-  body, html {
-    height: 100%;
-    width: 100%;
+  50% {
+      background-position: 100% 50%;
   }
-  
+  100% {
+      background-position: 0 50%;
+  }
+}
+
+a {
+  color: #F7AE00; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #FFF; /* Añadir un poco de interactividad */
+  text-decoration: underline;
+}
+
+/* Cabecera y Navegación */
+header {
+  justify-content: center;
+  background: #004b8546;
+  padding: 20px 0;
+  border-bottom: 2px solid #F7AE00;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: #F7AE00;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+  color: #F7AE00;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+  color: #F7AE00;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  color: #FFF;
+}
+
+label {
+  color: #F7AE00; /* Cambia el color de la fuente a rojo */
+}
+
+/* Secciones y Contenido */
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 15px;
+  border: 1px solid #F7AE00; 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease; 
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0); 
+  border-radius: 8px; 
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
   body {
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    line-height: 1.5;
-    background: linear-gradient(45deg,#F7AE00,#4037A4,#004B85,#D60019);
-    background-size: 300% 300%;
-    display: flex;
-    flex-direction: column;
-    animation: color 12s ease-in-out infinite;
-  }
-
-  @keyframes color{
-    0%{
-        background-position: 0 50%;
-    }
-    
-    50%{
-        background-position: 100% 50%;
-    }
-    
-    100%{
-        background-position: 0 50%;
-    }
-  }
-  
-  a {
-    color: #F7AE00; 
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  a:hover {
-    color: #FFF; /* Añadir un poco de interactividad */
-    text-decoration: underline;
-  }
-  
-  /* Cabecera y Navegación */
-  header {
-    justify-content: center;
-    background: #004b8546;
-    padding: 20px 0;
-    border-bottom: 2px solid #F7AE00;
-    align-items: center;
-  }
-  
-  h1 {
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    font-size: 40px;
-    color: #F7AE00;
-    text-align:center;
-  }
-  
-  h2 {
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    font-size: 26px;
-    color:  #F7AE00;
-  }
-
-  h3 {
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    font-size: 23px;
-    color:  #F7AE00;
-  }
-
-  p {
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    font-size: 19px;
-    color:  #FFF;
-  }
-
-
-  label {
-    color: #F7AE00; /* Cambia el color de la fuente a rojo */
-  }
-  
-  /* Secciones y Contenido */
-  .container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 15px;
-    border: 1px solid #F7AE00; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease; 
-  }
-  
-  
-  section {
-    margin-bottom: 40px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0); 
-    border-radius: 8px; 
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    body {
       margin-top: 20px;
       font-size: 14px;
-    }
-    
-    h1, h2 {
+  }
+  h1, h2 {
       font-size: 24px; /* Ajuste para que no sea tan grande en móviles */
-    }
-  
-    nav {
+  }
+  nav {
       flex-direction: column; /* Enlaces de navegación en columna para móviles */
       gap: 10px;
-    }
   }
+}
 
+/* Ajustes adicionales para mejorar la accesibilidad y estética */
+:focus {
+  outline: 3px solid #F7AE00; /* Hacer más visible el foco para accesibilidad */
+  outline-offset: 2px;
+}
 
-  /* Ajustes adicionales para mejorar la accesibilidad y estética */
-  :focus {
-    outline: 3px solid #F7AE00; /* Hacer más visible el foco para accesibilidad */
-    outline-offset: 2px;
-  }
-  
-  
-  #logo-USM{
-    width: 100px;
-    height: 80px;
-    margin-left: 20px; /* Alinea el logo a la izquierda */
-    margin-right: 50px;
-    float: left;
-  }
-  
-  .container-md {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center; /* Centra verticalmente los elementos */
-  }
+#logo-USM {
+  width: 100px;
+  height: 80px;
+  margin-left: 20px; /* Alinea el logo a la izquierda */
+  margin-right: 50px;
+  float: left;
+}
 
-  #notificaciones{
-    color: #F7AE00; 
-    text-decoration: none;
-    transition: color 0.3s ease;
-    background: none;
-    border: none;
-    font-size: 20px;
-  }
+.container-md {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+#notificaciones, #reservas {
+  color: #F7AE00; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Tabla de Reservas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+table th {
+  background-color: None;
+  color: #F7AE00;
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: rgba(0, 75, 133, 0.1);
+}
+
+table tbody tr:hover {
+  background-color: rgba(0, 75, 133, 0.2);
+}
+
+/* Botones de acción */
+.btn-action {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: 2px solid #F7AE00;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background: none;
+  color: #F7AE00;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-action.edit:hover {
+  background-color: #004B85;
+  color: #FFF;
+}
+
+.btn-action.delete:hover {
+  background-color: #D60019;
+  color: #FFF;
+}

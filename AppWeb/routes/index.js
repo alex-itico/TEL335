@@ -1,6 +1,7 @@
 'use strict'
-//const calendar_ctrl = require('../controllers/users.js')
-const user_ctrl = require('../controllers/users.js')
+const cancha_ctrl = require('../controllers/canchas.js');
+const user_ctrl = require('../controllers/users.js');
+const reserva_ctrl = require('../controllers/reservas.js');
 const express = require('express');
 const path = require('path'); // Importar el módulo path
 const router = express.Router();
@@ -67,8 +68,15 @@ router
 .post('/register',user_ctrl.register)
 
 .post('/login',user_ctrl.login)
-//.get('/login',user_ctrl.login)
 
+.get('/usuarios/:useremail',user_ctrl.getUserByEmail)
+
+.get('/canchas', cancha_ctrl.getCanchas)
+
+.post('/reservas', reserva_ctrl.createReserva)
+.get('/reservas/:id', reserva_ctrl.getReservaPerUser)
+.delete('/reservas/:id', reserva_ctrl.deleteReserva)
+.get('/reservas', reserva_ctrl.getReservas);
 
 module.exports = router;
 

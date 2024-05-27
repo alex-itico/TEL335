@@ -33,3 +33,8 @@ function toggleAlert(){
       window.location.href = '/login';
     }
   }
+  
+  function toggleAlert(){
+    var subMenu = document.getElementById('alertMenu');
+    subMenu.classList.toggle('open-alert');
+  }

@@ -50,6 +50,7 @@ a {
 header {
   justify-content: center;
   background: #004b8546;
+  height: 122px;
   padding: 20px 0;
   border-bottom: 2px solid #F7AE00;
   align-items: center;
@@ -77,6 +78,10 @@ nav .alerts{
 
 .alerts:hover #notifications{
   transform: scale(1.1);
+}
+
+#calendar-text{
+  text-align: center;
 }
 
 .menuAlerts{
@@ -217,8 +222,7 @@ h1 {
   text-align:center;
 }
 
-#calendar-text {
-  text-align: center;
+h2 {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 26px;

@@ -2,7 +2,8 @@ const user_model = require('../models/user.js');
 const jwt = require('jsonwebtoken');
 
 const register = async (req, res) => {
-  const { name, email, type_class, password } = req.body;
+  const { name, email, password } = req.body;
+  const type_class = 'student';
   if (!email || !password || !name || !type_class)
     return res.status(400).json({ msg: "Datos incompletos" });
 

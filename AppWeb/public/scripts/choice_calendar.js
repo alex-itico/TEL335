@@ -175,6 +175,7 @@ document.querySelector('button[type="submit"]').addEventListener('click', async 
 
     const result = await response.json();
     alert('Reserva creada con éxito');
+    window.location.href = '/ver_mis_reservas';
     // Aquí puedes agregar cualquier lógica adicional que necesites, como actualizar la UI
   } catch (error) {
     console.error('Error al crear la reserva:', error);

@@ -30,7 +30,7 @@ URL_CONNECTION = "mongodb+srv://chris_ayudante:TEL335_grupo1@tel335webos.qhu1cab
 ## Cómo ejecutar el proyecto:
 
 1. Clona el repositorio.
-2. Navega a la carpeta del proyecto.
+2. Navega a la carpeta del proyecto (cd AppWeb).
 3. Instala las dependencias con npm install.
 4. Crea el archivo .env con la configuración proporcionada (dentro de la carpeta AppWeb)
 5. Ejecuta el proyecto con el comando:
